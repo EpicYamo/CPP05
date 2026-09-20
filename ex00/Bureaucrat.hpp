@@ -6,7 +6,7 @@
 /*   By: aaycan <aaycan@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/06 16:37:54 by aaycan            #+#    #+#             */
-/*   Updated: 2026/09/20 03:33:51 by aaycan           ###   ########.fr       */
+/*   Updated: 2026/09/20 04:36:53 by aaycan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,12 @@ class Bureaucrat
 		void		decrementGrade();
 		void		incrementGrade();
 
-		class GradeTooLowException : public std::exception
+		class GradeTooLowException: public std::exception
 		{
 			public:
 				virtual const char *what() const throw();
 		};
-		class GradeTooHighException : public std::exception
+		class GradeTooHighException: public std::exception
 		{
 			public:
 				virtual const char *what() const throw();
