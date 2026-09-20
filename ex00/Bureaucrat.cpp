@@ -6,7 +6,7 @@
 /*   By: aaycan <aaycan@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/20 03:16:22 by aaycan            #+#    #+#             */
-/*   Updated: 2026/09/20 03:34:51 by aaycan           ###   ########.fr       */
+/*   Updated: 2026/09/20 03:41:35 by aaycan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void Bureaucrat::incrementGrade()
 
 std::ostream &operator<<(std::ostream &os, Bureaucrat const &other)
 {
-	os << other.getName() << ", bureaucrat grade " << other.getGrade() << std::endl;
+	os << other.getName() << ", bureaucrat grade " << other.getGrade();
 	return (os);
 }
 
