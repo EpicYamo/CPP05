@@ -6,7 +6,7 @@
 /*   By: aaycan <aaycan@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/20 03:35:30 by aaycan            #+#    #+#             */
-/*   Updated: 2026/09/23 01:44:05 by aaycan           ###   ########.fr       */
+/*   Updated: 2026/09/23 01:48:37 by aaycan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,7 @@ int main(void)
 	}
 	try
 	{
-		Form invalid_form_two("inv_form_one", 12, 160);
+		Form invalid_form_two("invalid_form_two", 12, 160);
 	}
 	catch(const std::exception &e)
 	{
@@ -126,7 +126,7 @@ int main(void)
 	}
 	try
 	{
-		Form invalid_form_three("inv_form_one", -32532523, 43643643);
+		Form invalid_form_three("invalid_form_three", -32532523, 43643643);
 	}
 	catch(const std::exception &e)
 	{
@@ -134,7 +134,7 @@ int main(void)
 	}
 	try
 	{
-		Form invalid_form_four("inv_form_one", 54543543, 60);
+		Form invalid_form_four("invalid_form_four", 54543543, 60);
 	}
 	catch(const std::exception &e)
 	{
