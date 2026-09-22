@@ -1,5 +1,5 @@
-NAME		:= bureaucrats_and_their_exceptions
-SRCS		:= Bureaucrat.cpp main.cpp
+NAME		:= bureaucrats_and_their_forms
+SRCS		:= Bureaucrat.cpp main.cpp Form.cpp
 OBJS		:= $(SRCS:.cpp=.o)
 CPP			:= c++
 CPPFLAGS	:= -Wall -Wextra -Werror -std=c++98

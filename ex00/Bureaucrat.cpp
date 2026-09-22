@@ -6,15 +6,15 @@
 /*   By: aaycan <aaycan@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/20 03:16:22 by aaycan            #+#    #+#             */
-/*   Updated: 2026/09/20 03:41:35 by aaycan           ###   ########.fr       */
+/*   Updated: 2026/09/22 04:12:31 by aaycan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() : _name("default"), _grade(150) {}
+Bureaucrat::Bureaucrat(): _name("default"), _grade(150) {}
 
-Bureaucrat::Bureaucrat(const Bureaucrat &other) : _name(other._name), _grade(other._grade) {}
+Bureaucrat::Bureaucrat(const Bureaucrat &other): _name(other._name), _grade(other._grade) {}
 
 Bureaucrat::~Bureaucrat() {}
 
@@ -24,7 +24,7 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
 	return (*this);
 }
 
-Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name)
+Bureaucrat::Bureaucrat(const std::string name, int grade): _name(name)
 {	
 	if (grade > 150)
 		throw GradeTooLowException();
@@ -68,10 +68,10 @@ std::ostream &operator<<(std::ostream &os, Bureaucrat const &other)
 
 const char *Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return ("Grade too low!");
+	return ("Grade is too low for this bureaucrat");
 }
 
 const char *Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return ("Grade too high!");
+	return ("Grade is too high for this bureaucrat");
 }
