@@ -6,14 +6,14 @@
 /*   By: aaycan <aaycan@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/21 22:45:03 by aaycan            #+#    #+#             */
-/*   Updated: 2026/09/22 04:42:03 by aaycan           ###   ########.fr       */
+/*   Updated: 2026/09/23 00:57:11 by aaycan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 
-Form::Form(): _name("Default"), _isSigned(false), _gradeToSign(150), _gradeToExecute(150) {}
+Form::Form(): _name("default"), _isSigned(false), _gradeToSign(150), _gradeToExecute(150) {}
 
 Form::Form(const Form &other) : _name(other._name), _isSigned(other._isSigned), _gradeToSign(other._gradeToSign), _gradeToExecute(other._gradeToExecute) {}
 

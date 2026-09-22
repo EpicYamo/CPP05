@@ -6,7 +6,7 @@
 /*   By: aaycan <aaycan@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/20 03:35:30 by aaycan            #+#    #+#             */
-/*   Updated: 2026/09/21 22:46:15 by aaycan           ###   ########.fr       */
+/*   Updated: 2026/09/23 01:33:33 by aaycan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main(void)
 	Bureaucrat B_Default;
 	std::cout << B_Default << '\n' << std::endl;
 
-	std::cout << "Testing operator overload '<<'" << std::endl;
+	std::cout << "Testing parameterized constructor" << std::endl;
 	Bureaucrat B_Arda("Arda", 15);
 	std::cout << B_Arda << '\n' << std::endl;
 
@@ -28,6 +28,7 @@ int main(void)
 
 	std::cout << "Testing operator overload '='" << std::endl;
 	Bureaucrat B_Shinji("Shinji", 53);
+	std::cout << B_Arda << std::endl;
 	B_Arda = B_Shinji;
 	std::cout << B_Arda << '\n' << std::endl;
 
