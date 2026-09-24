@@ -6,7 +6,7 @@
 /*   By: aaycan <aaycan@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 03:01:02 by aaycan            #+#    #+#             */
-/*   Updated: 2026/09/24 04:51:20 by aaycan           ###   ########.fr       */
+/*   Updated: 2026/09/24 18:42:28 by aaycan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 AForm::AForm(): _name("default"), _isSigned(false), _gradeToSign(150), _gradeToExecute(150) {}
 
-AForm::AForm(const AForm &other) : _name(other._name), _isSigned(other._isSigned), _gradeToSign(other._gradeToSign), _gradeToExecute(other._gradeToExecute) {}
+AForm::AForm(const AForm &other): _name(other._name), _isSigned(other._isSigned), _gradeToSign(other._gradeToSign), _gradeToExecute(other._gradeToExecute) {}
 
 AForm &AForm::operator=(const AForm &other)
 {
@@ -25,10 +25,10 @@ AForm &AForm::operator=(const AForm &other)
 
 AForm::~AForm() {}
 
-AForm::AForm(const std::string name, const int signGrade, const int execGrade)
+AForm::AForm(const std::string name, const int gradeToSign, const int gradeToExecute)
 	: _name(name), _isSigned(false),
-	  _gradeToSign(checkGrade(signGrade)),
-	  _gradeToExecute(checkGrade(execGrade))
+	  _gradeToSign(checkGrade(gradeToSign)),
+	  _gradeToExecute(checkGrade(gradeToExecute))
 {}
 
 void AForm::beSigned(const Bureaucrat &bureaucrat)
@@ -91,7 +91,7 @@ const char *AForm::GradeTooHighException::what() const throw()
 
 const char *AForm::FormNotSignedException::what() const throw()
 {
-	return ("The form is not signed so it cannot be executed.");
+	return ("The Form is not signed so it cannot be executed.");
 }
 
 std::ostream &operator<<(std::ostream &os,  AForm const &aform)

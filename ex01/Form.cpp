@@ -6,7 +6,7 @@
 /*   By: aaycan <aaycan@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/21 22:45:03 by aaycan            #+#    #+#             */
-/*   Updated: 2026/09/24 04:48:23 by aaycan           ###   ########.fr       */
+/*   Updated: 2026/09/24 18:42:49 by aaycan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 Form::Form(): _name("default"), _isSigned(false), _gradeToSign(150), _gradeToExecute(150) {}
 
-Form::Form(const Form &other) : _name(other._name), _isSigned(other._isSigned), _gradeToSign(other._gradeToSign), _gradeToExecute(other._gradeToExecute) {}
+Form::Form(const Form &other): _name(other._name), _isSigned(other._isSigned), _gradeToSign(other._gradeToSign), _gradeToExecute(other._gradeToExecute) {}
 
 Form &Form::operator=(const Form &other)
 {
@@ -25,10 +25,10 @@ Form &Form::operator=(const Form &other)
 
 Form::~Form() {}
 
-Form::Form(const std::string name, const int signGrade, const int execGrade)
+Form::Form(const std::string name, const int gradeToSign, const int gradeToExecute)
 	: _name(name), _isSigned(false),
-	  _gradeToSign(checkGrade(signGrade)),
-	  _gradeToExecute(checkGrade(execGrade))
+	  _gradeToSign(checkGrade(gradeToSign)),
+	  _gradeToExecute(checkGrade(gradeToExecute))
 {}
 
 void Form::beSigned(const Bureaucrat &bureaucrat)

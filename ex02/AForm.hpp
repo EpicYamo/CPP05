@@ -6,7 +6,7 @@
 /*   By: aaycan <aaycan@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 03:01:04 by aaycan            #+#    #+#             */
-/*   Updated: 2026/09/24 04:49:46 by aaycan           ###   ########.fr       */
+/*   Updated: 2026/09/24 18:26:19 by aaycan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ class AForm
 		AForm(const AForm &other);
 		AForm &operator=(const AForm &other);
 		virtual ~AForm();
-		AForm(const std::string name, const int sign_grade, const int execute_grade);
+		AForm(const std::string name, const int gradeToSign, const int gradeToExecute);
 
 		void		beSigned(const Bureaucrat &bureaucrat);
 		void		execute(const Bureaucrat &executor) const;

@@ -6,7 +6,7 @@
 /*   By: aaycan <aaycan@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/21 22:45:06 by aaycan            #+#    #+#             */
-/*   Updated: 2026/09/24 04:48:10 by aaycan           ###   ########.fr       */
+/*   Updated: 2026/09/24 18:26:29 by aaycan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class Form
 		Form(const Form &other);
 		Form &operator=(const Form &other);
 		~Form();
-		Form(const std::string name, const int sign_grade, const int execute_grade);
+		Form(const std::string name, const int gradeToSign, const int gradeToExecute);
 
 		void		beSigned(const Bureaucrat &bureaucrat);
 		
