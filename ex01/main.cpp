@@ -6,7 +6,7 @@
 /*   By: aaycan <aaycan@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/20 03:35:30 by aaycan            #+#    #+#             */
-/*   Updated: 2026/09/23 01:48:37 by aaycan           ###   ########.fr       */
+/*   Updated: 2026/09/24 20:22:05 by aaycan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ int main(void)
 		std::cerr << e.what() << std::endl;
 	}
 
-	std::cout << '\n' << "Testing ex01 (Form)" << std::endl;
+	std::cout << '\n' << "Testing ex01 (Forms)" << std::endl;
 	std::cout << "Testing default constructor" << std::endl;
 	Form default_form;
 	std::cout << default_form << '\n' << std::endl;

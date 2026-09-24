@@ -6,7 +6,7 @@
 /*   By: aaycan <aaycan@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 03:02:11 by aaycan            #+#    #+#             */
-/*   Updated: 2026/09/24 20:01:48 by aaycan           ###   ########.fr       */
+/*   Updated: 2026/09/24 20:15:25 by aaycan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,5 @@ PresidentialPardonForm::PresidentialPardonForm(const std::string target): AForm(
 
 void PresidentialPardonForm::executeAction() const
 {
-	std::cout << getName() << " has been pardoned by Zaphod Beeblebrox." << std::endl;		
+	std::cout << _target << " has been pardoned by Zaphod Beeblebrox." << std::endl;		
 }

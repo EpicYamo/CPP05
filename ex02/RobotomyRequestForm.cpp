@@ -6,7 +6,7 @@
 /*   By: aaycan <aaycan@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 03:02:16 by aaycan            #+#    #+#             */
-/*   Updated: 2026/09/24 19:53:41 by aaycan           ###   ########.fr       */
+/*   Updated: 2026/09/24 20:15:57 by aaycan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void RobotomyRequestForm::executeAction() const
 	n = rand() % 2;
 	std::cout << "Bzzzzzt Bzzzz Bzzzt..." << std::endl;
 	if (n == 1)
-		std::cout << getName() << " has been robotomized successfully." << std::endl;		
+		std::cout << _target << " has been robotomized successfully." << std::endl;		
 	else
-		std::cout << "Unfortunately, the robotomy of " << getName() << " failed due to drill getting stuck on the previous robot's head." << std::endl;
+		std::cout << "Unfortunately, the robotomy of " << _target << " failed due to drill getting stuck on the previous robot's head." << std::endl;
 }
