@@ -6,7 +6,7 @@
 /*   By: aaycan <aaycan@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/20 03:35:30 by aaycan            #+#    #+#             */
-/*   Updated: 2026/09/24 20:46:23 by aaycan           ###   ########.fr       */
+/*   Updated: 2026/09/24 20:53:27 by aaycan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int main(void)
 		highGrade.signForm(form);
 		lowGrade.signForm(form);
 	}
-	std::cout << "\nSigning boundary tests (grade == gradeToSign" << std::endl;
+	std::cout << "\nSigning boundary tests (grade == gradeToSign)" << std::endl;
 	{
 		Bureaucrat				exact("Carl", 145);
 		ShrubberyCreationForm	form("boundary");
