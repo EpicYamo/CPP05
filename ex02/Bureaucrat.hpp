@@ -6,7 +6,7 @@
 /*   By: aaycan <aaycan@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/06 16:37:54 by aaycan            #+#    #+#             */
-/*   Updated: 2026/09/22 04:39:48 by aaycan           ###   ########.fr       */
+/*   Updated: 2026/09/24 04:11:36 by aaycan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <string>
 # include <exception>
 
-class Form;
+class AForm;
 
 class Bureaucrat
 {
@@ -38,7 +38,7 @@ class Bureaucrat
 		void		decrementGrade();
 		void		incrementGrade();
 
-		void		signForm(Form &form);
+		void		signForm(AForm &aform);
 		
 		class GradeTooLowException: public std::exception
 		{

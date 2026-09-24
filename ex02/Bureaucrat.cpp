@@ -6,12 +6,12 @@
 /*   By: aaycan <aaycan@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/20 03:16:22 by aaycan            #+#    #+#             */
-/*   Updated: 2026/09/22 04:12:10 by aaycan           ###   ########.fr       */
+/*   Updated: 2026/09/24 04:11:38 by aaycan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat(): _name("default"), _grade(150) {}
 
@@ -77,16 +77,16 @@ const char *Bureaucrat::GradeTooHighException::what() const throw()
 	return ("Grade is too high for this bureaucrat");
 }
 
-void Bureaucrat::signForm(Form &form)
+void Bureaucrat::signForm(AForm &aform)
 {
 	try
 	{
-		form.beSigned(*this);
+		aform.beSigned(*this);
 	}
 	catch(const std::exception &e)
 	{
-		std::cout << _name << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
+		std::cout << _name << " couldn't sign " << aform.getName() << " because " << e.what() << std::endl;
 		return ;
 	}
-	std::cout << _name << " signed " << form.getName() << std::endl;
+	std::cout << _name << " signed " << aform.getName() << std::endl;
 }

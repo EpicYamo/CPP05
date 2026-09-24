@@ -6,7 +6,82 @@
 /*   By: aaycan <aaycan@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 03:01:02 by aaycan            #+#    #+#             */
-/*   Updated: 2026/09/24 03:01:02 by aaycan           ###   ########.fr       */
+/*   Updated: 2026/09/24 03:28:45 by aaycan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "AForm.hpp"
+#include "Bureaucrat.hpp"
+
+AForm::AForm(): _name("default"), _isSigned(false), _gradeToSign(150), _gradeToExecute(150) {}
+
+AForm::AForm(const AForm &other) : _name(other._name), _isSigned(other._isSigned), _gradeToSign(other._gradeToSign), _gradeToExecute(other._gradeToExecute) {}
+
+AForm &AForm::operator=(const AForm &other)
+{
+	_isSigned = other._isSigned;
+	return (*this);
+}
+
+AForm::~AForm() {}
+
+AForm::AForm(const std::string name, const int signGrade, const int execGrade)
+	: _name(name), _isSigned(false),
+	  _gradeToSign(checkGrade(signGrade)),
+	  _gradeToExecute(checkGrade(execGrade))
+{}
+
+void AForm::beSigned(const Bureaucrat &bureaucrat)
+{
+	if (bureaucrat.getGrade() <= _gradeToSign)
+	{
+		_isSigned = true;
+		return ;
+	}
+	throw GradeTooLowException();
+}
+
+std::string AForm::getName() const
+{
+	return (_name);
+}
+
+bool AForm::getIsSigned() const
+{
+	return (_isSigned);
+}
+
+int AForm::getGradeToSign() const
+{
+	return (_gradeToSign);
+}
+
+int AForm::getGradeToExecute() const
+{
+	return (_gradeToExecute);
+}
+
+const char *AForm::GradeTooLowException::what() const throw()
+{
+	return ("Grade is too low for this Form");
+}
+
+const char *AForm::GradeTooHighException::what() const throw()
+{
+	return ("Grade is too high for this Form");
+}
+
+std::ostream &operator<<(std::ostream &os,  AForm const &aform)
+{
+	os << "Name: " << aform.getName() << " SignStatus: " << aform.getIsSigned() << " SignGrade: " << aform.getGradeToSign() << " ExecuteGrade: " << aform.getGradeToExecute();
+	return (os);
+}
+
+int AForm::checkGrade(int grade)
+{
+	if (grade < 1)
+		throw AForm::GradeTooHighException();
+	if (grade > 150)
+		throw AForm::GradeTooLowException();
+	return (grade);
+}
