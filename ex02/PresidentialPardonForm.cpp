@@ -6,27 +6,28 @@
 /*   By: aaycan <aaycan@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 03:02:11 by aaycan            #+#    #+#             */
-/*   Updated: 2026/09/24 19:57:13 by aaycan           ###   ########.fr       */
+/*   Updated: 2026/09/24 20:01:48 by aaycan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRESIDENTIALPARDONFORM_HPP
-# define PRESIDENTIALPARDONFORM_HPP
+#include "PresidentialPardonForm.hpp"
 
-# include "AForm.hpp"
+PresidentialPardonForm::PresidentialPardonForm(): AForm("PresidentialPardonForm", 25, 5), _target("default") {}
 
-class PresidentialPardonForm: public AForm
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &other): AForm(other), _target(other._target) {}
+
+PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm &other)
 {
-	private:
-		std::string		_target;
-		virtual void	executeAction() const;
+	AForm::operator=(other);
+	_target = other._target;
+	return (*this);
+}
 
-	public:
-		PresidentialPardonForm();
-		PresidentialPardonForm(const PresidentialPardonForm &other);
-		PresidentialPardonForm &operator=(const PresidentialPardonForm &other);
-		virtual ~PresidentialPardonForm();
-		PresidentialPardonForm(const std::string target);
-};
+PresidentialPardonForm::~PresidentialPardonForm() {}
 
-#endif
+PresidentialPardonForm::PresidentialPardonForm(const std::string target): AForm("PresidentialPardonForm", 25, 5), _target(target) {}
+
+void PresidentialPardonForm::executeAction() const
+{
+	std::cout << getName() << " has been pardoned by Zaphod Beeblebrox." << std::endl;		
+}
