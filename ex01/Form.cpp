@@ -6,7 +6,7 @@
 /*   By: aaycan <aaycan@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/21 22:45:03 by aaycan            #+#    #+#             */
-/*   Updated: 2026/09/23 00:57:11 by aaycan           ###   ########.fr       */
+/*   Updated: 2026/09/24 04:48:23 by aaycan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,15 @@ void Form::beSigned(const Bureaucrat &bureaucrat)
 		return ;
 	}
 	throw GradeTooLowException();
+}
+
+int Form::checkGrade(int grade)
+{
+	if (grade < 1)
+		throw Form::GradeTooHighException();
+	if (grade > 150)
+		throw Form::GradeTooLowException();
+	return (grade);
 }
 
 std::string Form::getName() const
@@ -75,13 +84,4 @@ std::ostream &operator<<(std::ostream &os,  Form const &form)
 {
 	os << "Name: " << form.getName() << " SignStatus: " << form.getIsSigned() << " SignGrade: " << form.getGradeToSign() << " ExecuteGrade: " << form.getGradeToExecute();
 	return (os);
-}
-
-int Form::checkGrade(int grade)
-{
-	if (grade < 1)
-		throw Form::GradeTooHighException();
-	if (grade > 150)
-		throw Form::GradeTooLowException();
-	return (grade);
 }

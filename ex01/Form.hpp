@@ -6,7 +6,7 @@
 /*   By: aaycan <aaycan@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/21 22:45:06 by aaycan            #+#    #+#             */
-/*   Updated: 2026/09/22 04:40:32 by aaycan           ###   ########.fr       */
+/*   Updated: 2026/09/24 04:48:10 by aaycan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Form
 		bool				_isSigned;
 		const int			_gradeToSign;
 		const int			_gradeToExecute;
-		static int	checkGrade(int grade);
+		static int			checkGrade(int grade);
 
 	public:
 		Form();
