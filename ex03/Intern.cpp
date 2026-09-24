@@ -6,7 +6,7 @@
 /*   By: aaycan <aaycan@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 20:59:44 by aaycan            #+#    #+#             */
-/*   Updated: 2026/09/24 22:16:58 by aaycan           ###   ########.fr       */
+/*   Updated: 2026/09/24 22:38:39 by aaycan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ AForm *Intern::makeForm(const std::string name, const std::string target)
 		std::cout << "Intern: unknown form \"" << name << "\"" << std::endl;
 		return (NULL);
 	}
-	std::cout << "Intern creates " << name << std::endl;
-	return (formCreators[i](target));
+	AForm *form = formCreators[i](target);
+	std::cout << "Intern creates " << form->getName() << std::endl;
+	return (form);
 }

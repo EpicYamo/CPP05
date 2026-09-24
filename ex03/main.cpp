@@ -6,10 +6,11 @@
 /*   By: aaycan <aaycan@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/20 03:35:30 by aaycan            #+#    #+#             */
-/*   Updated: 2026/09/24 20:53:27 by aaycan           ###   ########.fr       */
+/*   Updated: 2026/09/24 22:34:20 by aaycan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Intern.hpp"
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"
@@ -81,6 +82,39 @@ int main(void)
 		ShrubberyCreationForm	assigned("blank");
 		assigned = original;
 		std::cout << "assigned form isSigned: " << assigned.getIsSigned() << std::endl;
+	}
+	std::cout << "\nIntern Tests" << std::endl;
+	{
+		Intern		intern;
+		Bureaucrat	bureaucrat("Norman", 1);
+
+		AForm *rrf = intern.makeForm("robotomy request", "Bender");
+		if (rrf != NULL)
+		{
+			bureaucrat.signForm(*rrf);
+			bureaucrat.executeForm(*rrf);
+			delete rrf;
+		}
+
+		AForm *scf = intern.makeForm("shrubbery creation", "backyard");
+		if (scf != NULL)
+		{
+			bureaucrat.signForm(*scf);
+			bureaucrat.executeForm(*scf);
+			delete scf;
+		}
+
+		AForm *ppf = intern.makeForm("presidential pardon", "Bebebop");
+		if (ppf != NULL)
+		{
+			bureaucrat.signForm(*ppf);
+			bureaucrat.executeForm(*ppf);
+			delete ppf;
+		}
+
+		AForm *invalid = intern.makeForm("time travel request", "Marty");
+		if (invalid != NULL)
+			delete invalid;
 	}
 	return (0);
 }
