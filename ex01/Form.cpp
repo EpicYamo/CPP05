@@ -6,7 +6,7 @@
 /*   By: aaycan <aaycan@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/21 22:45:03 by aaycan            #+#    #+#             */
-/*   Updated: 2026/09/24 18:42:49 by aaycan           ###   ########.fr       */
+/*   Updated: 2026/09/24 22:47:53 by aaycan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,12 +72,12 @@ int Form::getGradeToExecute() const
 
 const char *Form::GradeTooLowException::what() const throw()
 {
-	return ("Grade is too low for this form");
+	return ("Grade is too low for this Form");
 }
 
 const char *Form::GradeTooHighException::what() const throw()
 {
-	return ("Grade is too high for this form");
+	return ("Grade is too high for this Form");
 }
 
 std::ostream &operator<<(std::ostream &os,  Form const &form)
