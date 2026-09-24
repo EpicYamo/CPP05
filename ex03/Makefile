@@ -1,6 +1,6 @@
 NAME		:= this_not_that
 SRCS		:= Bureaucrat.cpp main.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp \
-				PresidentialPardonForm.cpp
+				PresidentialPardonForm.cpp Intern.cpp
 OBJS		:= $(SRCS:.cpp=.o)
 CPP			:= c++
 CPPFLAGS	:= -Wall -Wextra -Werror -std=c++98
