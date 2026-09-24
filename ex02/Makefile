@@ -1,4 +1,4 @@
-NAME		:= form_up_maggots
+NAME		:= this_not_that
 SRCS		:= Bureaucrat.cpp main.cpp Form.cpp
 OBJS		:= $(SRCS:.cpp=.o)
 CPP			:= c++
